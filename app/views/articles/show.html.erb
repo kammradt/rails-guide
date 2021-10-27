@@ -1,13 +1,12 @@
-<h2>Article</h2>
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
 
 <ul>
-  <li>
-    <%= @article.title %>
-    <em> -
-      <%= @article.body %>
-    </em>
-    <b> -
-      [<%= @article.id %>]
-    </b>
-  </li>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%=
+    link_to "Destroy",
+            article_path(@article),
+            method: :delete,
+            data: { confirm: "Sure??" } %></li>
 </ul>
